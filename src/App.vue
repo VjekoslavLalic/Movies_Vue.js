@@ -1,10 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+      <router-link class="routerlink" to="/piva">O nama</router-link>
+      <router-link class="routerlink" to="/piva">Piva</router-link>
+      <img
+        to="/about"
+        class="logo"
+        alt="PivovaraMedvedgrad logo"
+        src="@/assets/medvedgradLogo.jpg"
+      />
+      <router-link class="routerlink" to="/pivnice">Pivnice</router-link>
+      <router-link class="routerlink" to="/pivnice">Jelovnici</router-link>
+    </nav>
+    <!--  -->
+    <router-view />
   </div>
 </template>
 
@@ -28,5 +38,24 @@
       color: #42b983;
     }
   }
+}
+.navbar {
+  background-color: black;
+}
+.logo {
+  width: 250px;
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+.routerlink:link {
+  padding: 50px;
+  font-size: 28px;
+  text-decoration: none;
+}
+.routerlink:visited {
+  color: white;
+}
+.routerlink:hover {
+  background-color: grey;
 }
 </style>
