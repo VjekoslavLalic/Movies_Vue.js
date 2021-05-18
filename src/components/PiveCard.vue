@@ -43,9 +43,10 @@ export default {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  border: solid black 2px;
+
   padding: 0px;
   width: 650px;
+  background-color: #2d0808;
 }
 /* Lijevi div koji se nalazi unutar cardPiva div elementa*/
 .cardImgPiva img {
@@ -64,7 +65,6 @@ export default {
 }
 .info {
   float: left;
-  border: solid black 1px;
   margin-left: auto;
   margin-right: auto;
   width: 33%;
@@ -79,7 +79,7 @@ export default {
   text-align: left;
 }
 .imeIvrsta button {
-  background-color: #390d0d;
+  background-color: #2e2828;
   color: hsl(0, 0%, 72%);
   border: 2px solid rgba(20, 17, 17, 0.64);
   border-radius: 10px;

@@ -1,9 +1,9 @@
 <template>
-  <div class="PivniceCard">
-    <div class="cardPivnica">
-      <div class="infoCardPivnica">
+  <div class="PivovareCard">
+    <div class="cardPivovare">
+      <div class="infoCardPivovare">
         <h1>{{ info.naziv }}</h1>
-        <div class="infoPivnice">
+        <div class="infoPivovare">
           <p>Adresa: {{ info.adresa }}</p>
           <p>Telefon: {{ info.telefon }}</p>
           <p>Radno vrijeme: {{ info.radnoVrijeme }}</p>
@@ -21,14 +21,14 @@ export default {
 };
 </script>
 <style>
-.cardPivnica {
+.cardPivovare {
   display: flex;
   margin: 20px auto 20px auto;
   border: solid rgba(20, 17, 17, 0.64) 2px;
   padding: 0px;
   width: 700px;
 }
-.cardPivnica img {
+.cardPivovare img {
   width: 380px;
   height: 156px;
   border: 3px solid rgba(20, 17, 17, 0.64);
@@ -36,12 +36,12 @@ export default {
   margin-top: auto;
   margin-bottom: auto;
 }
-.infoCardPivnica {
+.infoCardPivovare {
   width: 38%;
   text-align: left;
   margin: 10px 5px 10px 20px;
 }
-.infoPivnice button {
+.infoPivovare button {
   background-color: #390d0d;
   color: hsl(0, 0%, 72%);
   border: 2px solid rgba(20, 17, 17, 0.64);
