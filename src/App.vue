@@ -48,6 +48,9 @@
   border-bottom-right-radius: 3rem;
   border-bottom-left-radius: 3rem;
 }
+.routerlink {
+  text-decoration: none;
+}
 .routerlink:link {
   padding: 50px;
   font-size: 28px;
@@ -55,8 +58,10 @@
 }
 .routerlink:visited {
   color: white;
+  text-decoration: none;
 }
 .routerlink:hover {
   background-color: grey;
+  text-decoration: none;
 }
 </style>
