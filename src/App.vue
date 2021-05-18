@@ -2,16 +2,16 @@
   <div id="app">
     <!-- Navbar -->
     <nav class="navbar navbar-inverse">
-      <router-link class="routerlink" to="/piva">O nama</router-link>
+      <router-link class="routerlink" to="/about">O nama</router-link>
       <router-link class="routerlink" to="/piva">Piva</router-link>
-      <img
-        to="/about"
-        class="logo"
-        alt="PivovaraMedvedgrad logo"
-        src="@/assets/medvedgradLogo.jpg"
-      />
+      <router-link to="/"
+        ><img
+          class="logo"
+          alt="PivovaraMedvedgrad logo"
+          src="@/assets/medvedgradLogo.jpg"
+      /></router-link>
       <router-link class="routerlink" to="/pivnice">Pivnice</router-link>
-      <router-link class="routerlink" to="/pivnice">Jelovnici</router-link>
+      <router-link class="routerlink" to="/jelovnici">Jelovnici</router-link>
     </nav>
     <!--  -->
     <router-view />
@@ -25,6 +25,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #3a3636;
 }
 
 #nav {
