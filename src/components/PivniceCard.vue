@@ -23,12 +23,10 @@ export default {
 <style>
 .cardPivnica {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+  margin: 20px auto 20px auto;
   border: solid rgba(20, 17, 17, 0.64) 2px;
   padding: 0px;
-  width: 650px;
+  width: 700px;
 }
 .cardPivnica img {
   width: 380px;
@@ -39,9 +37,9 @@ export default {
   margin-bottom: auto;
 }
 .infoCardPivnica {
-  width: 35%;
+  width: 38%;
   text-align: left;
-  margin-left: 20px;
+  margin: 10px 5px 10px 20px;
 }
 .infoPivnice button {
   background-color: #390d0d;

@@ -1,9 +1,6 @@
 <template>
   <div class="Pivnice">
-    <div class="pivnicemenu">
-      <a>Ilica</a> | <a>Fakin craft bar</a> | <a>Mali medo</a> |
-      <a>Samoborska</a>
-    </div>
+    <h1>Pivnice</h1>
     <pivnice-card
       v-for="(card, drac) in cardsPivnice"
       :key="drac"
@@ -26,9 +23,23 @@ cardsPivnice = [
   },
   {
     img: require("@/assets/Fakincraftbar.jpg"),
-    naziv: "Ilica",
-    adresa: "ilica49",
-    telefon: "01 4846 922",
+    naziv: "Fakin craft bar",
+    adresa: "Vukovarska 68",
+    telefon: "01 6293 377",
+    radnoVrijeme: "7:30-24h",
+  },
+  {
+    img: require("@/assets/Malimedo.jpg"),
+    naziv: "Mali medo",
+    adresa: "Tkalčićeva 36",
+    telefon: "01 4929 613",
+    radnoVrijeme: "10-24h",
+  },
+  {
+    img: require("@/assets/Samoborska.jpg"),
+    naziv: "Samoborska",
+    adresa: "Samoborska cesta 217",
+    telefon: "01 6293 377",
     radnoVrijeme: "10-24h",
   },
 ];
@@ -44,8 +55,6 @@ export default {
     PivniceCard,
   },
 };
-
-PivniceCard;
 </script>
 
 <style>

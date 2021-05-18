@@ -1,5 +1,6 @@
 <template>
   <div class="Piva">
+    <h1>Naša piva</h1>
     <div class="pivamenu">
       <a>Sva piva</a> | <a>Stalna piva</a> | <a>Sezonska piva</a> |
       <a>Hladno pivo</a>

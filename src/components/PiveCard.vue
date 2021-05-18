@@ -78,4 +78,11 @@ export default {
   margin-left: 30px;
   text-align: left;
 }
+.imeIvrsta button {
+  background-color: #390d0d;
+  color: hsl(0, 0%, 72%);
+  border: 2px solid rgba(20, 17, 17, 0.64);
+  border-radius: 10px;
+  width: 85px;
+}
 </style>
