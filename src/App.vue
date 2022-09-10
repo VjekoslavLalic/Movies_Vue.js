@@ -3,7 +3,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-inverse">
       <router-link class="routerlink" to="/about">O nama</router-link>
-      <router-link class="routerlink" to="/piva">Piva</router-link>
+      <router-link class="routerlink" to="/svapiva">Piva</router-link>
       <router-link to="/"
         ><img
           class="logo"
@@ -17,7 +17,17 @@
     <router-view />
   </div>
 </template>
-
+<script>
+  import store from "@/store.js";
+  export default {
+    name: "App",
+    data() {
+      return {
+        store,
+      };
+    },
+  }
+  </script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

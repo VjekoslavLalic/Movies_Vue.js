@@ -2,8 +2,9 @@
   <div class="Piva">
     <h1>Naša piva</h1>
     <div class="pivamenu">
-      <a>Sva piva</a> | <a>Stalna piva</a> | <a>Sezonska piva</a> |
-      <a>Hladno pivo</a>
+      <router-link class="routerlink" to="/svapiva">Sva piva</router-link>|
+      <router-link class="routerlink" to="/stalnapiva">Stalna piva</router-link>|
+      <router-link class="routerlink" to="/sezonskapiva">Sezonska piva</router-link>
     </div>
 
     <pive-card v-for="(card, drac) in cardsPiva" :key="drac" :info="card" />
@@ -14,32 +15,7 @@
 import PiveCard from "../components/PiveCard.vue";
 
 let cardsPiva = [];
-cardsPiva = [
-  {
-    img: require("@/assets/Baltazar.jpg"),
-    name: "Baltazar",
-    vrsta: "Plemeniti pilsner",
-    abv: "6,1%",
-    ibu: "32",
-    mj: "3",
-  },
-  {
-    img: require("@/assets/Crnakraljica.jpg"),
-    name: "Crna kraljica",
-    vrsta: "Crni lager",
-    abv: "4,8%",
-    ibu: "20",
-    mj: "1-12",
-  },
-  {
-    img: require("@/assets/Zlatnimedved.jpg"),
-    name: "Zlatni medvjed",
-    vrsta: "Pilsner",
-    abv: "4,4%",
-    ibu: "22",
-    mj: "1-12",
-  },
-];
+
 export default {
   name: "Piva",
   data() {
@@ -47,10 +23,36 @@ export default {
       cardsPiva,
     };
   },
+  async mounted(){
+    fetch("http://localhost:3330/svapiva")
+    .then(r=>{
+          return r.json()
+    })
+    .then(data => {
+      console.log("PODACI SA BACKENDA", data)
+      
+      
+      let data2 = data.map((element) => {
+        return {
+          img: element.img,
+          name: element.naziv,
+          vrsta: element.vrstaPiva,
+          abv: element.postotakAlkohola,
+          ibu: element.gorcina,
+          mj: element.uravnoteziteljSSK,
+          opis: element.opis
+        }
+      })
+      console.log(data2)
+      this.cardsPiva = data2
+})
+},
   components: {
     PiveCard,
   },
 };
+
+
 </script>
 <style>
 .Piva {

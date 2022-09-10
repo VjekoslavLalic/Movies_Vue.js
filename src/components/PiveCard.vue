@@ -8,7 +8,7 @@
         <div class="imeIvrsta">
           <h1>{{ info.name }}</h1>
           <p>{{ info.vrsta }}</p>
-          <button>Više</button>
+          <p>{{info.opis}}</p>
         </div>
         <div class="infoPiva">
           <div class="info">
@@ -50,16 +50,16 @@ export default {
 }
 /* Lijevi div koji se nalazi unutar cardPiva div elementa*/
 .cardImgPiva img {
-  height: 330px;
+  height: 300px;
   padding: 0px;
-  width: 100%;
+  width: 280px;
 }
 /* Div unutar cardInfoPiva  koji sadrži info o pivu abv, ibu imj i sadrži jođ druga 3 div elementa */
 .infoPiva {
   float: left;
 
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   width: 50%;
   margin-left: 20px;
 }
@@ -76,6 +76,7 @@ export default {
 .imeIvrsta {
   float: left;
   margin-left: 30px;
+  margin-right: 20px;
   text-align: left;
 }
 .imeIvrsta button {

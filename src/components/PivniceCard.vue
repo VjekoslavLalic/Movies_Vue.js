@@ -7,7 +7,8 @@
           <p>Adresa: {{ info.adresa }}</p>
           <p>Telefon: {{ info.telefon }}</p>
           <p>Radno vrijeme: {{ info.radnoVrijeme }}</p>
-          <button>Više</button>
+          <button>Rezerviraj</button>
+          
         </div>
       </div>
       <img :src="info.img" />

@@ -11,50 +11,79 @@
 
 <script>
 import PivniceCard from "../components/PivniceCard.vue";
+
+
+
+
+
+let cards = []
 let cardsPivnice = [];
 
-cardsPivnice = [
-  {
-    img: require("@/assets/Ilicaterasa.jpg"),
-    naziv: "Ilica",
-    adresa: "ilica49",
-    telefon: "01 4846 922",
-    radnoVrijeme: "10-24h",
-  },
-  {
-    img: require("@/assets/Fakincraftbar.jpg"),
-    naziv: "Fakin craft bar",
-    adresa: "Vukovarska 68",
-    telefon: "01 6293 377",
-    radnoVrijeme: "7:30-24h",
-  },
-  {
-    img: require("@/assets/Malimedo.jpg"),
-    naziv: "Mali medo",
-    adresa: "Tkalčićeva 36",
-    telefon: "01 4929 613",
-    radnoVrijeme: "10-24h",
-  },
-  {
-    img: require("@/assets/Samoborska.jpg"),
-    naziv: "Samoborska",
-    adresa: "Samoborska cesta 217",
-    telefon: "01 6293 377",
-    radnoVrijeme: "10-24h",
-  },
-];
-/* { img: "", naziv: "", adresa: "", telefon: "", radnoVrijeme: "" } */
+
 export default {
   name: "Pivnice",
-  data() {
-    return {
+  data(){
+    return{
       cardsPivnice,
-    };
+    }
   },
+  async mounted(){
+    fetch("http://localhost:3330/pivnice")
+    .then(r=>{
+          return r.json()
+    })
+    .then(data => {
+      console.log("PODACI SA BACKENDA", data)
+      
+      
+      let data2 = data.map((element) => {
+        return {
+          img: element.img,
+          naziv: element.nazivPivovare,
+          adresa: element.adresa,
+          telefon: element.telefon,
+          radnoVrijeme: element.radnoVrijeme,
+        }
+      })
+      console.log(data2)
+      this.cardsPivnice = data2
+})
+},
+
   components: {
     PivniceCard,
-  },
+  }
 };
+/*
+async mounted() {
+    fetch("http://localhost:3330/pivnice")
+      .then((r) => {
+        return r.json();
+      })
+      .then((data) => {
+        console.log("Podaci s backenda, pivnice", data);
+
+        this.cardsPivnice = data.map((element) => {
+          return {
+          
+            naziv: element.nazivPivovare,
+            adresa: element.adresa,
+            telefon: element.telefon,
+            radnoVrijeme: element.radnoVrijeme
+            
+          };
+          nazivPivovare: "Ilica",
+            adresa: "Ilica 49",
+            telefon: "01/4846-922",
+            fax: "01 / 3646 - 559",
+            radnoVrijeme: "10 - 24",
+            opis:
+          });
+        
+      });
+      
+  },
+  */
 </script>
 
 <style>
