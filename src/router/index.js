@@ -36,9 +36,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Ilica.vue')
   },
   {
-    path: '/fakincraftbar',
-    name: 'FakinCraftBar',
-    component: () => import(/* webpackChunkName: "about" */ '../views/FakinCraftBar.vue')
+    path: '/rezervacije',
+    name: 'Rezervacije',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Rezervacije.vue')
   },
   {
     path: '/malimedo',

@@ -2,9 +2,9 @@
   <div class="Piva">
     <h1>Naša piva</h1>
     <div class="pivamenu">
-      <router-link class="routerlink" to="/svapiva">Sva piva</router-link>|
-      <router-link class="routerlink" to="/stalnapiva">Stalna piva</router-link>|
-      <router-link class="routerlink" to="/sezonskapiva">Sezonska piva</router-link>
+      <router-link class="routerlinkpiva" to="/svapiva">Sva piva</router-link>|
+      <router-link class="routerlinkpiva" to="/stalnapiva">Stalna piva</router-link>|
+      <router-link class="routerlinkpiva" to="/sezonskapiva">Sezonska piva</router-link>
     </div>
 
     <pive-card v-for="(card, drac) in cardsPiva" :key="drac" :info="card" />
@@ -56,10 +56,28 @@ export default {
 </script>
 <style>
 .Piva {
+  margin-top: 20px;
   color: white;
 }
 .pivamenu {
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+.routerlinkpiva {
+  text-decoration: none;
+}
+.routerlinkpiva:link {
+  padding: 30px;
+  font-size: 22px;
+  text-decoration: none;
+}
+.routerlinkpiva:visited {
+  color: white;
+  text-decoration: none;
+}
+.routerlinkpiva:hover {
+  background-color: rgba(0, 0, 0, 0.001);
+  text-decoration: none;
 }
 </style>

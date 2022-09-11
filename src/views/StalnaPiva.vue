@@ -2,9 +2,9 @@
     <div class="Piva">
       <h1>Naša piva</h1>
       <div class="pivamenu">
-      <router-link class="routerlink" to="/svapiva">Sva piva</router-link>|
-      <router-link class="routerlink" to="/stalnapiva">Stalna piva</router-link>|
-      <router-link class="routerlink" to="/sezonskapiva">Sezonska piva</router-link>
+      <router-link class="routerlinkpiva" to="/svapiva">Sva piva</router-link>|
+      <router-link class="routerlinkpiva" to="/stalnapiva">Stalna piva</router-link>|
+      <router-link class="routerlinkpiva" to="/sezonskapiva">Sezonska piva</router-link>
     </div>
       <pive-card v-for="(card, drac) in cardsPiva" :key="drac" :info="card" />
     </div>
@@ -51,54 +51,6 @@
     },
   };
   
-  /*
-  id
-  :
-  10001
-  naziv
-  :
-  "Zlatni medvjed"
-  vrstaPiva
-  :
-  "Pilsner"
-  postotakAlkohola
-  :
-  4.4
-  gorcina
-  :
-  22
-  uravnoteziteljSSK
-  :
-  "1 - 12"
-  opis
-  
-  cardsPiva = [
-    {
-      img: require("@/assets/Baltazar.jpg"),
-      name: "Baltazar",
-      vrsta: "Plemeniti pilsner",
-      abv: "6,1%",
-      ibu: "32",
-      mj: "3",
-    },
-  
-    {
-      img: require("@/assets/Crnakraljica.jpg"),
-      name: "Crna kraljica",
-      vrsta: "Crni lager",
-      abv: "4,8%",
-      ibu: "20",
-      mj: "1-12",
-    },
-    {
-      img: require("@/assets/Zlatnimedved.jpg"),
-      name: "Zlatni medvjed",
-      vrsta: "Pilsner",
-      abv: "4,4%",
-      ibu: "22",
-      mj: "1-12",
-    },
-  ];*/
   </script>
   <style>
   .Piva {
@@ -108,4 +60,20 @@
     margin-top: 20px;
     margin-bottom: 50px;
   }
+  .routerlinkpiva {
+  text-decoration: none;
+}
+.routerlinkpiva:link {
+  padding: 30px;
+  font-size: 22px;
+  text-decoration: none;
+}
+.routerlinkpiva:visited {
+  color: white;
+  text-decoration: none;
+}
+.routerlinkpiva:hover {
+  background-color: rgba(0, 0, 0, 0.001);
+  text-decoration: none;
+}
   </style>

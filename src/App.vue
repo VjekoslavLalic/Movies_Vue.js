@@ -62,7 +62,7 @@
   text-decoration: none;
 }
 .routerlink:link {
-  padding: 50px;
+  padding: 30px;
   font-size: 28px;
   text-decoration: none;
 }
@@ -71,7 +71,7 @@
   text-decoration: none;
 }
 .routerlink:hover {
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.001);
   text-decoration: none;
 }
 </style>
