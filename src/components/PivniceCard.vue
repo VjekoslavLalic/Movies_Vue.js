@@ -7,11 +7,12 @@
           <p>Adresa: {{ info.adresa }}</p>
           <p>Telefon: {{ info.telefon }}</p>
           <p>Radno vrijeme: {{ info.radnoVrijeme }}</p>
-          <button>Rezerviraj</button>
-          
         </div>
       </div>
-      <img :src="info.img" />
+      <div class = imgpivovare>
+        <img :src="info.img" />
+      </div>
+      
     </div>
   </div>
 </template>
@@ -27,20 +28,24 @@ export default {
   margin: 20px auto 20px auto;
   border: solid rgba(20, 17, 17, 0.64) 2px;
   padding: 0px;
-  width: 700px;
+  width: 800px;
+  height: 300px;
+  background-color: #2d0808;
+  
 }
 .cardPivovare img {
-  width: 380px;
-  height: 156px;
-  border: 3px solid rgba(20, 17, 17, 0.64);
-  border-radius: 28px;
-  margin-top: auto;
-  margin-bottom: auto;
+  width: 100%;
+  height: 100%;
+}
+.imgpivovare{
+  width: 100%;
+  height: 100%;
+  margin-right: 0px;
 }
 .infoCardPivovare {
-  width: 38%;
+  width: 40%;
   text-align: left;
-  margin: 10px 5px 10px 20px;
+  margin: 10px 20px 190px 20px;
 }
 .infoPivovare button {
   background-color: #390d0d;
