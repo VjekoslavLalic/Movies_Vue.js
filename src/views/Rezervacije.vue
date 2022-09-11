@@ -54,6 +54,8 @@ export default {
         };
     },
   methods: {
+
+
     async postImage() {
             let post = {
                 ime: this.ime,
