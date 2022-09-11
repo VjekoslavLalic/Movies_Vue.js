@@ -60,7 +60,11 @@ const routes = [
     name: 'StalnaPiva',
     component: () => import(/* webpackChunkName: "about" */ '../views/StalnaPiva.vue')
   },
-
+  {
+    path: '/fantompiva',
+    name: 'FantomPiva',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FantomPiva.vue')
+  },
 ]
 
 const router = new VueRouter({

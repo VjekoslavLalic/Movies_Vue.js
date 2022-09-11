@@ -89,6 +89,7 @@ async mounted() {
 <style>
 .Pivnice {
   color: white;
+  margin-top: 20px;
 }
 .pivnicemenu {
   margin-top: 20px;

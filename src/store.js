@@ -11,4 +11,6 @@ export default {
     postPivovara: '',
     postNapomena: '',
     postDatum: '',
+    postTelefon: '',
+    postVrijeme: '',
 };

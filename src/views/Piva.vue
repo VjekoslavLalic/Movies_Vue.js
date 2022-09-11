@@ -4,7 +4,8 @@
     <div class="pivamenu">
       <router-link class="routerlinkpiva" to="/svapiva">Sva piva</router-link>|
       <router-link class="routerlinkpiva" to="/stalnapiva">Stalna piva</router-link>|
-      <router-link class="routerlinkpiva" to="/sezonskapiva">Sezonska piva</router-link>
+      <router-link class="routerlinkpiva" to="/sezonskapiva">Sezonska piva</router-link>|
+      <router-link class="routerlinkpiva" to="/fantompiva">Fantom piva</router-link>
     </div>
 
     <pive-card v-for="(card, drac) in cardsPiva" :key="drac" :info="card" />
@@ -80,4 +81,5 @@ export default {
   background-color: rgba(0, 0, 0, 0.001);
   text-decoration: none;
 }
+
 </style>

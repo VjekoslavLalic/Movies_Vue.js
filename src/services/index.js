@@ -9,9 +9,26 @@ let Service = axios.create({
 // naš objekt za sve pozive koji se dotiču `Post`ova
 let Posts = {
     async create(data) {
+        let serverData = {
+            ime: data.ime,
+            prezime: data.prezime,
+            datum: data.datum,
+            brojOsoba: data.brojosoba,
+            izborPivnice: data.pivovara,
+            napomena: data.napomena,
+            telefon: data.telefon,
+            vrijemeRezervacije: data.vrijemeRezervacije
+        }
         console.log('spremam na backend', data)
+        await Service.post("/rezervacije", serverData)
+        return
     },
-
+    /*        ime: this.postIme,
+              prezime: this.postPrezime,
+              brojosoba: this.postBrojOsoba,
+              pivovara: this.postPivovara,
+              napomena: this.postNapomena,
+              datum: this.postDatum*/
     /*
     async getAll() {
 

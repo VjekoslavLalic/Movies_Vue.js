@@ -14,7 +14,14 @@
     <label>Broj osoba: </label>
     <input v-model="postBrojOsoba" type="text" id="info" name="lastname" placeholder="Broj osoba...">
 
-    <label for="country">Pivovara: </label>
+    <label for="phone">Telefon:</label><br>
+    <input v-model="postTelefon" type="text" id="info" name="phone" placeholder="Broj telefona...">
+
+    <label for="appt">Vrijeme rezervacije (09:00 - 21:00):</label><br>
+    <input v-model="postVrijeme" type="time" id="info" name="appt"
+    min="09:00" max="21:00" required> <br><br>
+
+    <label for="country">Izbor Pivovare: </label>
 
     <select v-model="postPivovara" id="info">
       <option value="Ilica">Ilica</option>
@@ -56,10 +63,23 @@ export default {
           brojosoba: this.postBrojOsoba,
           pivovara: this.postPivovara,
           napomena: this.postNapomena,
-          datum: this.postDatum
+          datum: this.postDatum,
+          telefon: this.postTelefon,
+          vrijemeRezervacije: this.postVrijeme
         }
         Posts.create(post)
+
+        this.postIme = '';
+        this.postPrezime = '';
+        this.postBrojOsoba = "";
+        this.postPivovara = "";
+        this.postNapomena = "";
+        this.postDatum = "";
+        this.postTelefon = "";
+        this.postVrijeme = "";
+
       }
+      
     }
   }
  /* Divlet post = {
@@ -124,5 +144,8 @@ input[type=submit]:hover {
   background-color: rgb(66, 64, 64);
   padding: 20px;
   text-align: left;
+}
+.container label{
+  color:white;
 }
 </style>

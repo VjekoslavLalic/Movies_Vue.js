@@ -25,7 +25,7 @@
       };
     },
     async mounted(){
-      fetch("http://localhost:3330/sezonskapiva")
+      fetch("http://localhost:3330/fantompiva")
       .then(r=>{
             return r.json()
       })
