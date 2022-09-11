@@ -4,19 +4,19 @@
     <h1>REZERVIRAJ MJESTO</h1>
   </div>
   <div class="container">
-  <form method="POST">
+  <form @submit.prevent="postRezervacija">
     <label>Ime:</label>
-    <input v-model="ime" type="text" id="info" name="firstname" placeholder="Ime...">
+    <input v-model="postIme" type="text" id="info" name="firstname" placeholder="Ime...">
 
     <label>Prezime:</label>
-    <input v-model="prezime" type="text" id="info" name="lastname" placeholder="Prezime...">
+    <input v-model="postPrezime" type="text" id="info" name="lastname" placeholder="Prezime...">
 
     <label>Broj osoba: </label>
-    <input v-model = "brojosoba" type="text" id="info" name="lastname" placeholder="Broj osoba...">
+    <input v-model="postBrojOsoba" type="text" id="info" name="lastname" placeholder="Broj osoba...">
 
     <label for="country">Pivovara: </label>
 
-    <select v-model="pivovara" id="info">
+    <select v-model="postPivovara" id="info">
       <option value="Ilica">Ilica</option>
       <option value="Mali Medo">Mali Medo</option>
       <option value="Fakin Craft Bar">Fakin Craft Bar</option>
@@ -25,11 +25,11 @@
 
     <form>
       <label>Datum:</label><br>
-      <input type="date" id="info" name="rezervacija">
+      <input v-model="postDatum" type="date" id="info" name="rezervacija">
     </form><br>
 
     <label for="subject">Napomena</label>
-    <textarea v-model="napomena" id="info" name="subject" placeholder="Napomena..." style="height:200px"></textarea>
+    <textarea v-model="postNapomena" id="info" name="subject" placeholder="Napomena..." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
   </form>
@@ -37,40 +37,44 @@
 </div>
 </template>
 <script>
-  import { Posts } from '@/services';
-
+import {Services, Posts} from "@/services";
+import store from "@/store.js";
+let rezervacije = [];
 
 export default {
   name: "Rezervacije",
   data() {
-        return {
-            store,
-            imageData: null,
-            ime: '',
-            prezime: '',
-            brojosoba:'',
-            pivovara: '',
-            napomena: ''
-        };
+        return store
+
     },
-  methods: {
+    methods: {
+      postRezervacija(){
 
-
-    async postImage() {
-            let post = {
-                ime: this.ime,
-                prezime: this.prezime,
-                brojosoba: this.brojosoba,
-                pivovara: this.pivovara,
-                napomena: this.napomena,
-            };
-            let newpost = await Posts.add(post);
-            console.log('Spremljeni post', newpost.data);
-            this.$router.push({ name: 'Rezervacije' });
-        },
+        let post = {
+          ime: this.postIme,
+          prezime: this.postPrezime,
+          brojosoba: this.postBrojOsoba,
+          pivovara: this.postPivovara,
+          napomena: this.postNapomena,
+          datum: this.postDatum
+        }
+        Posts.create(post)
+      }
+    }
   }
-}
-
+ /* Divlet post = {
+          ime: this.ime,
+          prezime: this.prezime,
+          brojosoba: this.brojosoba,
+          pivovara: this.pivovara,
+          napomena: this.napomena,
+      };
+      let newpost = add(post);
+     
+      console.log('Spremljeni post', newpost.data);
+      this.$router.push({ name: 'Rezervacije' });
+      */
+  
 
 </script>
 <style scoped>

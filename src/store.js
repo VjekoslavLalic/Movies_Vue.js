@@ -5,4 +5,10 @@ export default {
     narudzbe: [],
     updateNarudzbi: [],
     cards: [],
+    postIme: '',
+    postPrezime: '',
+    postBrojOsoba: '',
+    postPivovara: '',
+    postNapomena: '',
+    postDatum: '',
 };

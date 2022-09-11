@@ -8,30 +8,28 @@ let Service = axios.create({
 
 // naš objekt za sve pozive koji se dotiču `Post`ova
 let Posts = {
-    add(post) {
-        return Service.post('/posts', post);
+    async create(data) {
+        console.log('spremam na backend', data)
     },
+
     /*
-    async getAll(searchTerm) {
-        let options = {};
+    async getAll() {
 
-        if (searchTerm) {
-            options.params = {
-                _any: searchTerm
-            };
-        }
-
-        let response = await Service.get('/posts', options);
-        return response.data.map(doc => {
+        let response = await Service.get('/rezervacije');
+        let data = response.data
+        data = data.map(doc => {
             return {
-                id: doc.id,
-                url: doc.source,
-                email: doc.createdBy,
-                title: doc.title,
-                posted_at: Number(doc.postedAt)
-            };
+                ime: this.ime,
+                prezime: this.prezime,
+                brojosoba: this.brojosoba,
+                pivovara: this.pivovara,
+                napomena: this.napomena,
+            }
         });
-    }*/
+        return data;
+
+    }
+    */
 };
 
 export { Service, Posts }; // exportamo Service za ručne pozive ili Posts za metode.
