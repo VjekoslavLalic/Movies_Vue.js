@@ -25,7 +25,7 @@
       };
     },
     async mounted(){
-      fetch("http://localhost:3330/fantompiva")
+      fetch("https://immense-waters-06232.herokuapp.com/fantompiva")
       .then(r=>{
             return r.json()
       })
