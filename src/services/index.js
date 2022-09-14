@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // instanca axios-a za potrebe Fipugram backenda
 let Service = axios.create({
-    baseURL: 'http://localhost:3330/',
+    baseURL: 'https://immense-waters-06232.herokuapp.com/',
     timeout: 1000
 });
 
