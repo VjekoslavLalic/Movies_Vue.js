@@ -5,66 +5,139 @@
       <div class="naslovPivMed"><p>Pivovara Medvedgrad</p></div>
     </div>
 
-    <div class="infoPivnice">
-      <div class="leftDiv">
-        <h2>PIVNICE</h2>
-        <p>
-          Provjerite radno vrijeme naših pivnica i mogućnosti preuzimanja i
-          narudžbe hrane i piva za van.
-        </p>
-        <router-link class="toPivnice" to="/Pivnice">Provjeri</router-link>
-      </div>
-      <img src="@/assets/pivnice.jpg" />
-    </div>
+    <h1>NAŠA PIVOVARA</h1>
+    <h5>Tri desetljeća iskustva i ljubavi prema pivu utkano je u svaki dio naše pivovare</h5>
+    <h6>Naša varionica potpuno je automatizirana i ima kapacitet kuhanja od 6 do 7 uvaraka odnosno 40.000 litara piva dnevno.</h6>
+
 
     <div class="infoPivnice">
-      <img src="@/assets/obilazak.jpg" />
       <div class="leftDiv">
-        <h2>OBILAZAK</h2>
+        <h2>{{cardsOnama[0].naziv}}</h2>
         <p>
-          Skupite ekipu i zavirite u najsretnije mjesto na svijetu – mjesto gdje
-          se kuha pivo! Od ponedjeljka do petka od 10-18 sati, najave primamo na
-          mail tour@pivovara-medvedgrad.hr
+          {{cardsOnama[0].label}}
         </p>
+        <button v-on:click="isHiddenVarionica = !isHiddenVarionica">Više</button>
+      </div>
+      <img :src="cardsOnama[0].img" />
+    </div>
+    <div v-if="!isHiddenVarionica" class="opis">
+    <p>
+      {{cardsOnama[0].opis}}
+    </p>
+   </div>
+    
+   <div class="infoPivnice">
+      <img :src="cardsOnama[1].img" />
+      <div class="leftDiv">
+        <h2>{{cardsOnama[1].naziv}}</h2>
+        <p>
+          {{cardsOnama[1].label}}
+        </p>
+        <button v-on:click="isHiddenPodrum = !isHiddenPodrum">Više</button>
       </div>
     </div>
-    <div class="infoPivnice">
+    <div v-if="!isHiddenPodrum" class="opis">
+    <p>
+      {{cardsOnama[1].opis}}
+    </p>
+   </div>
+
+   <div class="infoPivnice">
       <div class="leftDiv">
-        <h2>MEDVEDGRAD FOUNDERBEAM</h2>
+        <h2>{{cardsOnama[2].naziv}}</h2>
         <p>
-          2017. započeli smo prikupljati sredstva za izgradnju nove, moderne
-          pivovare crowdfunding kampanjom na Funderbeam platformi. Bila je ovo
-          jedna od najuspješnijih kampanja ove platforme, u kojoj je sudjelovalo
-          292 ulagača iz 26 zemalja svijeta.
+          {{cardsOnama[2].label}}
         </p>
+        <button v-on:click="isHiddenPunjenje = !isHiddenPunjenje">Više</button>
       </div>
-      <iframe
-        width="65%"
-        height="100%"
-        src="https://www.youtube.com/embed/MPDPskicGs8"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+      <img :src="cardsOnama[2].img" />
     </div>
+    <div v-if="!isHiddenPunjenje" class="opis">
+    <p>
+      {{cardsOnama[2].opis}}
+    </p>
+   </div>
+
+   <div class="infoPivnice">
+      <img :src="cardsOnama[3].img" />
+      <div class="leftDiv">
+        <h2>{{cardsOnama[3].naziv}}</h2>
+        <p>
+          {{cardsOnama[3].label}}
+        </p>
+        <button v-on:click="isHiddenKontrola= !isHiddenKontrola">Više</button>
+      </div>
+    </div>
+    <div v-if="!isHiddenKontrola" class="opis">
+    <p>
+      {{cardsOnama[3].opis}}
+    </p>
+   </div>
+   
+   <div class="infoPivnice">
+      <div class="leftDiv">
+        <h2>{{cardsOnama[4].naziv}}</h2>
+        <p>
+          {{cardsOnama[4].label}}
+        </p>
+        <button v-on:click="isHiddenHladniLanac = !isHiddenHladniLanac">Više</button>
+      </div>
+      <img :src="cardsOnama[4].img" />
+    </div>
+    <div v-if="!isHiddenHladniLanac" class="opis">
+    <p>
+      {{cardsOnama[4].opis}}
+    </p>
+   </div>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+let cardsOnama = [];
 
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      isHiddenVarionica: true,
+      isHiddenPodrum: true,
+      isHiddenPunjenje: true,
+      isHiddenKontrola: true,
+      isHiddenHladniLanac: true,
+      cardsOnama,
+    };
   },
+  async mounted(){
+    fetch("http://localhost:3330")
+    .then(r=>{
+          return r.json()
+    })
+    .then(data => {
+      console.log("PODACI SA BACKENDA", data)
+      
+      
+      let data2 = data.map((element) => {
+        return {
+          img: element.img,
+          naziv: element.naziv,
+          label: element.label,
+          opis: element.opis,
+        }
+      })
+      console.log(data2)
+      this.cardsOnama = data2
+})
+},
 };
 </script>
 <style>
 .home {
   color: white;
+  padding-bottom: 200px;
+}
+.home h1{
+  margin-top: 20px;
 }
 .zgradaPivMed {
   margin-top: 30px;
@@ -96,7 +169,7 @@ export default {
   display: flex;
   width: 700px;
   height: 250px;
-  margin: 30px auto 30px auto;
+  margin: 30px auto 0px auto;
   text-align: left;
   padding: 0px;
   background-color: #171616;
@@ -122,4 +195,21 @@ export default {
   width: 63%;
   height: 100%;
 }
+.infoPivnice button{
+  background-color: #4f4d4d;
+  width: 80px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.opis{
+
+  display: flex;
+  width: 700px;
+  margin: 0px auto 0px auto;
+  text-align: left;
+  padding: 10px;
+  background-color: #171616;
+}
+
 </style>

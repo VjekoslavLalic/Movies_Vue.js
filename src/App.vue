@@ -2,14 +2,13 @@
   <div id="app">
     <!-- Navbar -->
     <nav class="navbar navbar-inverse">
-      <router-link class="routerlink" to="/about">O nama</router-link>
+      <router-link class="routerlink" to="/">Pivovara</router-link>
       <router-link class="routerlink" to="/svapiva">Piva</router-link>
-      <router-link to="/"
-        ><img
+      <img
           class="logo"
           alt="PivovaraMedvedgrad logo"
           src="@/assets/medvedgradLogo.jpg"
-      /></router-link>
+      />
       <router-link class="routerlink" to="/pivnice">Pivnice</router-link>
       <router-link class="routerlink" to="/jelovnici">Jelovnici</router-link>
     </nav>
