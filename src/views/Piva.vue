@@ -60,6 +60,9 @@ export default {
   margin-top: 20px;
   color: white;
 }
+.piva h1{
+  color: white;
+}
 .pivamenu {
   margin-top: 20px;
   margin-bottom: 50px;

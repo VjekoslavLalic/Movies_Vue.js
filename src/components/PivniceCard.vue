@@ -68,6 +68,9 @@ export default {
   text-align: left;
   margin: 10px 20px 190px 20px;
 }
+.infoCardPivovare h1{
+  color:white;
+}
 .infoPivovare button {
   color: white;
   background-color: rgb(120, 48, 48);;

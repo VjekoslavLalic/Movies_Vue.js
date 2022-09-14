@@ -79,6 +79,9 @@ export default {
   margin-right: 20px;
   text-align: left;
 }
+.imeIvrsta h1{
+  color: white;
+}
 .imeIvrsta button {
   background-color: #2e2828;
   color: hsl(0, 0%, 72%);
