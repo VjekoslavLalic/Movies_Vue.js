@@ -25,7 +25,7 @@ export default {
     };
   },
   async mounted(){
-    fetch("http://localhost:3330/svapiva")
+    fetch("https://immense-waters-06232.herokuapp.com/svapiva")
     .then(r=>{
           return r.json()
     })

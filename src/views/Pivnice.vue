@@ -27,7 +27,7 @@ export default {
     }
   },
   async mounted(){
-    fetch("http://localhost:3330/pivnice")
+    fetch("https://immense-waters-06232.herokuapp.com/pivnice")
     .then(r=>{
           return r.json()
     })

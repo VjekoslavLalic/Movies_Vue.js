@@ -109,7 +109,7 @@ export default {
     };
   },
   async mounted(){
-    fetch("http://localhost:3330")
+    fetch("https://immense-waters-06232.herokuapp.com")
     .then(r=>{
           return r.json()
     })

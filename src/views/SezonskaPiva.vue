@@ -25,7 +25,7 @@
       };
     },
     async mounted(){
-      fetch("http://localhost:3330/sezonskapiva")
+      fetch("https://immense-waters-06232.herokuapp.com/sezonskapiva")
       .then(r=>{
             return r.json()
       })

@@ -23,30 +23,7 @@ let Posts = {
         await Service.post("/rezervacije", serverData)
         return
     },
-    /*        ime: this.postIme,
-              prezime: this.postPrezime,
-              brojosoba: this.postBrojOsoba,
-              pivovara: this.postPivovara,
-              napomena: this.postNapomena,
-              datum: this.postDatum*/
-    /*
-    async getAll() {
 
-        let response = await Service.get('/rezervacije');
-        let data = response.data
-        data = data.map(doc => {
-            return {
-                ime: this.ime,
-                prezime: this.prezime,
-                brojosoba: this.brojosoba,
-                pivovara: this.pivovara,
-                napomena: this.napomena,
-            }
-        });
-        return data;
-
-    }
-    */
 };
 
 export { Service, Posts }; // exportamo Service za ručne pozive ili Posts za metode.

@@ -24,7 +24,7 @@
       };
     },
     async mounted(){
-      fetch("http://localhost:3330/stalnapiva")
+      fetch("https://immense-waters-06232.herokuapp.com/stalnapiva")
       .then(r=>{
             return r.json()
       })
