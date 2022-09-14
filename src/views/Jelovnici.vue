@@ -8,7 +8,7 @@
           <h2>Ilica</h2>
           <img src="@/assets/burger.jpg" />
           <a
-            href="https://www.pivovara-medvedgrad.hr/wp-content/uploads/2021/04/Pivnica-Ilica-jelovnik_2021_05.pdf"
+            href="https://pivovara-medvedgrad.hr/wp-content/uploads/2022/09/Pivnica-Ilica-jelovnik_2022_07-e.pdf"
             type="button"
             target="_blank"
             >Jelovnik</a
@@ -19,7 +19,7 @@
           <h2>Fakin craft bar</h2>
           <img src="@/assets/fakinhrana.jpg" />
           <a
-            href="https://www.pivovara-medvedgrad.hr/wp-content/uploads/2017/03/jelovnik_12-2019.pdf"
+            href="https://pivovara-medvedgrad.hr/wp-content/uploads/2022/09/FAKIN-menu_8.2022.pdf"
             type="button"
             target="_blank"
             >Jelovnik</a
@@ -30,7 +30,7 @@
           <h2>Mali medo</h2>
           <img src="@/assets/malimedoburger.jpg" />
           <a
-            href="https://www.pivovara-medvedgrad.hr/wp-content/uploads/2021/03/Pivnica-MM-jelovnik_2021_04_01.pdf"
+            href="https://pivovara-medvedgrad.hr/wp-content/uploads/2022/09/Pivnica-MM-jelovnik_2022_08_E.pdf"
             type="button"
             target="_blank"
             >Jelovnik</a
@@ -41,7 +41,7 @@
           <h2>Samoborska</h2>
           <img src="@/assets/samoborskajelovnik.jpg" />
           <a
-            href="https://www.pivovara-medvedgrad.hr/wp-content/uploads/2021/04/Pivnica-Samoborska-jelovnik_2021_05.pdf"
+            href="https://pivovara-medvedgrad.hr/wp-content/uploads/2022/09/Pivnica-Samoborska-jelovnik_2022-prijelom-srpanj-e.pdf"
             type="button"
             target="_blank"
             >Jelovnik</a
